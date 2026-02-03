@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>연습용 페이지 2 — 실험 공간</title>
+    <style>
+        :root{ --primary:#1e3a5f; --accent:#d4764d; }
+        body{ font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial; margin:0; background:#fff; color:#222; }
+        .topbar{ background:linear-gradient(90deg,var(--primary),#2c5aa0); color:#fff; padding:16px 18px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+        .topbar h1{ font-size:1rem; margin:0; }
+        .btn{ background:var(--primary); color:#fff; border:none; padding:10px 14px; border-radius:8px; cursor:pointer; font-weight:600; text-decoration:none; display:inline-block; }
+        .btn.alt{ background:var(--accent); }
+        .main{ padding:18px; max-width:1100px; margin:0 auto; }
+        .card{ border:1px solid #eee; padding:14px; border-radius:8px; box-shadow:0 4px 16px rgba(0,0,0,0.04); background:#fafafa; }
+        .navs{ margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
+        .example-area{ margin-top:18px; }
+        .small{ font-size:0.95rem; color:#444; }
+        footer{ margin-top:30px; padding:12px 18px; text-align:center; color:#666; font-size:0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <h1>연습용 페이지 2 — 실험 공간</h1>
+        <div>
+            <a class="btn" href="index.html" title="원본 index.html">← 원본(1)</a>
+            <a class="btn alt" href="index_nav.html" title="네비게이션 래퍼">네비게이션 래퍼</a>
+        </div>
+    </div>
+
+    <main class="main">
+        <div class="card">
+            <h2>여기는 연습용 2페이지입니다</h2>
+            <p class="small">원본 index.html 파일은 손상되지 않았습니다. 이 페이지에서 자유롭게 실험하세요.</p>
+
+            <div class="navs" aria-label="페이지 이동 버튼">
+                <a class="btn" href="index.html">페이지 1 (원본)</a>
+                <a class="btn alt" href="index_nav.html">페이지 1 (네비게이션 래퍼)</a>
+            </div>
+
+            <div class="example-area">
+                <h3>간단한 실험 예시</h3>
+                <p>여기에 새로운 카드, 버튼, 스크립트 등을 추가해 보세요. 예: 간단한 토글 버튼</p>
+
+                <button id="toggleBtn" class="btn">토글 박스 표시</button>
+                <div id="box" style="display:none; margin-top:12px; padding:12px; background:#fff; border:1px solid #eee; border-radius:6px;">
+                    표시된 연습 요소입니다.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        연습용 페이지 — 원본을 변경하지 않고 실험하세요.
+    </footer>
+
+    <script>
+        document.getElementById('toggleBtn').addEventListener('click', function(){
+            const b = document.getElementById('box');
+            b.style.display = b.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html>
